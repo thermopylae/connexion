@@ -220,13 +220,14 @@ class FlaskApi(AbstractAPI):
         context_dict = {}
         setattr(flask._request_ctx_stack.top, 'connexion_context', context_dict)
         flask_request = flask.request
+        getData = flask_request.content_type in ["image/jpg","image/jpeg","video/mp4"]
         request = ConnexionRequest(
             flask_request.url,
             flask_request.method,
             headers=flask_request.headers,
             form=flask_request.form,
             query=flask_request.args,
-            body=flask_request.get_data(),
+            body=flask_request.get_data() if getData else flask_request.stream,
             json_getter=lambda: flask_request.get_json(silent=True),
             files=flask_request.files,
             path_params=params,
