@@ -23,7 +23,7 @@ fi
 
 rm -fr dist/*
 python3 setup.py sdist bdist_wheel
-twine upload -r testpypi dist/*
+twine upload dist/*
 
 # revert version
 git checkout -- */__init__.py
