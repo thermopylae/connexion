@@ -82,14 +82,12 @@ def readme():
 
 
 setup(
-    name='connexion',
+    name='connexion_streaming',
     packages=find_packages(),
     version=version,
-    description='Connexion - API first applications with OpenAPI/Swagger and Flask',
+    description='Connexion Streaming - Connexion fork with upload streaming',
     long_description=readme(),
-    author='Zalando SE',
-    url='https://github.com/zalando/connexion',
-    keywords='openapi oai swagger rest api oauth flask microservice framework',
+    keywords='openapi oai swagger rest api oauth flask microservice framework connexion',
     license='Apache License Version 2.0',
     setup_requires=['flake8'],
     python_requires=">=3.6",
@@ -108,7 +106,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',

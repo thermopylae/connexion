@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ $# -ne 1 ]; then
     >&2 echo "usage: $0 <version>"
@@ -19,11 +19,11 @@ else
 	sed -i "s/__version__ = .*/__version__ = '${version}'/" */__init__.py
 fi
 
-tox -e py37-pypi,flake8 --skip-missing-interpreters
+#tox -e py37-pypi,flake8 --skip-missing-interpreters
 
 rm -fr dist/*
 python3 setup.py sdist bdist_wheel
-twine upload dist/*
+twine upload -r testpypi dist/*
 
 # revert version
 git checkout -- */__init__.py
