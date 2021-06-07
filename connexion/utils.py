@@ -178,6 +178,7 @@ def is_null(value):
 
 
 def has_stream_upload(body_def):
+    print(body_def)
     return body_def.get('x-stream-upload', False)
 
 
