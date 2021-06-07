@@ -332,6 +332,11 @@ class AbstractOperation(SecureOperation, metaclass=abc.ABCMeta):
         """
         :rtype bool
         """
+        from pprint import pprint
+        pprint(self.body_definition)
+        pprint(self.body_schema)
+        pprint(self)
+        
         return has_stream_upload(self.body_definition)
 
     @property
