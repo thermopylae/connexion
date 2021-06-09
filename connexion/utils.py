@@ -177,10 +177,6 @@ def is_null(value):
     return False
 
 
-def has_stream_upload(body_def):
-    return body_def.get('x-stream-upload', False)
-
-
 def has_coroutine(function, api=None):
     """
     Checks if function is a coroutine.

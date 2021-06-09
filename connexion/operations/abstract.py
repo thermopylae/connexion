@@ -8,7 +8,7 @@ from ..decorators.parameter import parameter_to_arg
 from ..decorators.produces import BaseSerializer, Produces
 from ..decorators.response import ResponseValidator
 from ..decorators.validation import ParameterValidator, RequestBodyValidator
-from ..utils import all_json, is_nullable, has_stream_upload
+from ..utils import all_json, is_nullable
 
 logger = logging.getLogger('connexion.operations.abstract')
 
@@ -327,12 +327,6 @@ class AbstractOperation(SecureOperation, metaclass=abc.ABCMeta):
             return self.produces[0]
         else:
             return DEFAULT_MIMETYPE
-
-    def get_stream_upload(self):
-        """
-        :rtype bool
-        """
-        return has_stream_upload(self.body_definition)
 
     @property
     def _uri_parsing_decorator(self):
